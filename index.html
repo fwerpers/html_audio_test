@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>iceice_pandoc2</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="latex.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div id="a975d49d">
+
+</div>
+<div class="Highlighting">
+<p><span style="color: 0.40,0.40,0.40">%</span>load_ext autoreload <span
+style="color: 0.40,0.40,0.40">%</span>autoreload <span
+style="color: 0.25,0.63,0.44">2</span></p>
+</div>
+<pre><code>The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload</code></pre>
+<div id="5200f95d">
+
+</div>
+<div class="Highlighting">
+<p><span style="color: 0.40,0.40,0.40">%</span>run ..<span
+style="color: 0.40,0.40,0.40">/</span>notebook_main.py</p>
+</div>
+<pre><code>&lt;IPython.core.display.Markdown object&gt;</code></pre>
+<p><span class="math inline">\displaystyle \phi_{m}{\left(x,z
+\right)}</span></p>
+<p>and</p>
+<p><span class="math inline">\displaystyle \mathbf{\Psi}_{m} =
+\left[\begin{matrix}0\\\psi_{m}{\left(x,z
+\right)}\\0\end{matrix}\right]</span></p>
+<p>The displacement <span class="math inline">\mathbf{u}_m</span> for
+medium <span class="math inline">m</span> will be given by the Helmholtz
+decomposition equation</p>
+<p><span class="math inline">\displaystyle \mathbf{u}_m = \nabla \phi_m
++ \nabla \times \mathbf{\Psi}_m =
+\left[\begin{matrix}\frac{\partial}{\partial x} \phi_{m}{\left(x,z
+\right)} - \frac{\partial}{\partial z} \psi_{m}{\left(x,z
+\right)}\\0\\\frac{\partial}{\partial z} \phi_{m}{\left(x,z \right)} +
+\frac{\partial}{\partial x} \psi_{m}{\left(x,z
+\right)}\end{matrix}\right]</span></p>
+<p>The strain tensor <span class="math inline">\mathbf{e}</span> is
+defined by the Jacobian sum <span
+class="math inline">\frac{1}{2}(\mathbf{J_{u}}_m +
+\mathbf{J_{u}}_m^T)</span></p>
+<p>The Jacobian is given by</p>
+<p><span class="math inline">\displaystyle \mathbf{J_{u}}_m =
+\left[\begin{matrix}\frac{\partial^{2}}{\partial x^{2}}
+\phi_{m}{\left(x,z \right)} - \frac{\partial^{2}}{\partial z\partial x}
+\psi_{m}{\left(x,z \right)} &amp; 0 &amp; - \frac{\partial^{2}}{\partial
+z^{2}} \psi_{m}{\left(x,z \right)} + \frac{\partial^{2}}{\partial
+z\partial x} \phi_{m}{\left(x,z \right)}\\0 &amp; 0 &amp;
+0\\\frac{\partial^{2}}{\partial x^{2}} \psi_{m}{\left(x,z \right)} +
+\frac{\partial^{2}}{\partial z\partial x} \phi_{m}{\left(x,z \right)}
+&amp; 0 &amp; \frac{\partial^{2}}{\partial z^{2}} \phi_{m}{\left(x,z
+\right)} + \frac{\partial^{2}}{\partial z\partial x} \psi_{m}{\left(x,z
+\right)}\end{matrix}\right]</span></p>
+<p>This gives the strain tensor</p>
+<p><span class="math inline">\displaystyle \mathbf{e} =
+\left[\begin{matrix}\frac{\partial^{2}}{\partial x^{2}}
+\phi_{m}{\left(x,z \right)} - \frac{\partial^{2}}{\partial z\partial x}
+\psi_{m}{\left(x,z \right)} &amp; 0 &amp;
+\frac{\frac{\partial^{2}}{\partial x^{2}} \psi_{m}{\left(x,z
+\right)}}{2} - \frac{\frac{\partial^{2}}{\partial z^{2}}
+\psi_{m}{\left(x,z \right)}}{2} + \frac{\partial^{2}}{\partial z\partial
+x} \phi_{m}{\left(x,z \right)}\\0 &amp; 0 &amp;
+0\\\frac{\frac{\partial^{2}}{\partial x^{2}} \psi_{m}{\left(x,z
+\right)}}{2} - \frac{\frac{\partial^{2}}{\partial z^{2}}
+\psi_{m}{\left(x,z \right)}}{2} + \frac{\partial^{2}}{\partial z\partial
+x} \phi_{m}{\left(x,z \right)} &amp; 0 &amp;
+\frac{\partial^{2}}{\partial z^{2}} \phi_{m}{\left(x,z \right)} +
+\frac{\partial^{2}}{\partial z\partial x} \psi_{m}{\left(x,z
+\right)}\end{matrix}\right]</span></p>
+<p>We get the stress tensor from <span class="math inline">2\mu
+\mathbf{e} + \lambda\text{tr}[\mathbf{e}]\mathbf{I}</span></p>
+<p><span class="math inline">\displaystyle \mathbf{T} =
+\left[\begin{matrix}\lambda_{m} \left(\frac{\partial^{2}}{\partial
+x^{2}} \phi_{m}{\left(x,z \right)} + \frac{\partial^{2}}{\partial z^{2}}
+\phi_{m}{\left(x,z \right)}\right) + 2 \mu_{m}
+\left(\frac{\partial^{2}}{\partial x^{2}} \phi_{m}{\left(x,z \right)} -
+\frac{\partial^{2}}{\partial z\partial x} \psi_{m}{\left(x,z
+\right)}\right) &amp; 0 &amp; 2 \mu_{m}
+\left(\frac{\frac{\partial^{2}}{\partial x^{2}} \psi_{m}{\left(x,z
+\right)}}{2} - \frac{\frac{\partial^{2}}{\partial z^{2}}
+\psi_{m}{\left(x,z \right)}}{2} + \frac{\partial^{2}}{\partial z\partial
+x} \phi_{m}{\left(x,z \right)}\right)\\0 &amp; \lambda_{m}
+\left(\frac{\partial^{2}}{\partial x^{2}} \phi_{m}{\left(x,z \right)} +
+\frac{\partial^{2}}{\partial z^{2}} \phi_{m}{\left(x,z \right)}\right)
+&amp; 0\\2 \mu_{m} \left(\frac{\frac{\partial^{2}}{\partial x^{2}}
+\psi_{m}{\left(x,z \right)}}{2} - \frac{\frac{\partial^{2}}{\partial
+z^{2}} \psi_{m}{\left(x,z \right)}}{2} + \frac{\partial^{2}}{\partial
+z\partial x} \phi_{m}{\left(x,z \right)}\right) &amp; 0 &amp;
+\lambda_{m} \left(\frac{\partial^{2}}{\partial x^{2}} \phi_{m}{\left(x,z
+\right)} + \frac{\partial^{2}}{\partial z^{2}} \phi_{m}{\left(x,z
+\right)}\right) + 2 \mu_{m} \left(\frac{\partial^{2}}{\partial z^{2}}
+\phi_{m}{\left(x,z \right)} + \frac{\partial^{2}}{\partial z\partial x}
+\psi_{m}{\left(x,z \right)}\right)\end{matrix}\right]</span></p>
+<p>Assume we have three layers. In the first layer we have an incident
+wave and a reflected wave. In the second we have a transmitted and a
+reflected compressional and shear wave. In the third we have a
+transmitted wave. The potentials are given by</p>
+<p><span class="math inline">\displaystyle \phi_{1} = P e^{i K_{z1}
+\left(z - z_{s}\right)} + Q e^{- i K_{z1} \left(z -
+z_{b}\right)}</span></p>
+<p><span class="math inline">\displaystyle \phi_{2} = A e^{i K_{z2}
+\left(z - z_{b}\right)} + B e^{- i K_{z2} \left(z -
+z_{a}\right)}</span></p>
+<p><span class="math inline">\displaystyle \psi_{2} = C e^{i L_{z2}
+\left(z - z_{b}\right)} + D e^{- i L_{z2} \left(z -
+z_{a}\right)}</span></p>
+<p><span class="math inline">\displaystyle \phi_{3} = F e^{i K_{z3}
+\left(z - z_{a}\right)}</span></p>
+<p>The boundary conditions for continuity of normal stress and strain at
+the air/solid interface give the following equations</p>
+<p><span class="math inline">\displaystyle i K_{z1} P e^{i K_{z1}
+\left(z_{b} - z_{s}\right)} - i K_{z1} Q = i A K_{z2} - i B K_{z2} e^{i
+K_{z2} z_{a} - i K_{z2} z_{b}} + i C k_{x} + i D k_{x} e^{i L_{z2} z_{a}
+- i L_{z2} z_{b}}</span></p>
+<p><span class="math inline">\displaystyle 2 i k_{x} \mu_{1} \left(i
+K_{z1} P e^{i K_{z1} \left(z_{b} - z_{s}\right)} - i K_{z1} Q\right) = -
+2 A K_{z2} k_{x} \mu_{2} + 2 B K_{z2} k_{x} \mu_{2} e^{i K_{z2} z_{a} -
+i K_{z2} z_{b}} + C L_{z2}^{2} \mu_{2} - C k_{x}^{2} \mu_{2} + D
+L_{z2}^{2} \mu_{2} e^{i L_{z2} z_{a} - i L_{z2} z_{b}} - D k_{x}^{2}
+\mu_{2} e^{i L_{z2} z_{a} - i L_{z2} z_{b}}</span></p>
+<p><span class="math inline">\displaystyle \left(P e^{2 i K_{z1} z_{b}}
++ Q e^{i K_{z1} \left(z_{b} + z_{s}\right)}\right) \left(- K_{z1}^{2}
+\lambda_{1} - 2 K_{z1}^{2} \mu_{1} - k_{x}^{2} \lambda_{1}\right) e^{- i
+K_{z1} \left(z_{b} + z_{s}\right)} = \left(- A \left(K_{z2}^{2}
+\lambda_{2} + 2 K_{z2}^{2} \mu_{2} + k_{x}^{2} \lambda_{2}\right) e^{i
+\left(2 K_{z2} z_{b} + 2 L_{z2} z_{b}\right)} - B \left(K_{z2}^{2}
+\lambda_{2} + 2 K_{z2}^{2} \mu_{2} + k_{x}^{2} \lambda_{2}\right) e^{i
+\left(K_{z2} z_{a} + K_{z2} z_{b} + 2 L_{z2} z_{b}\right)} - 2 C L_{z2}
+k_{x} \mu_{2} e^{i \left(2 K_{z2} z_{b} + 2 L_{z2} z_{b}\right)} + 2 D
+L_{z2} k_{x} \mu_{2} e^{i \left(2 K_{z2} z_{b} + L_{z2} z_{a} + L_{z2}
+z_{b}\right)}\right) e^{- i \left(2 K_{z2} z_{b} + 2 L_{z2}
+z_{b}\right)}</span></p>
+<p>and similarly for the solid/water interface</p>
+<p><span class="math inline">\displaystyle i A K_{z2} e^{i K_{z2} z_{a}
+- i K_{z2} z_{b}} - i B K_{z2} + i C k_{x} e^{i L_{z2} z_{a} - i L_{z2}
+z_{b}} + i D k_{x} = i F K_{z3}</span></p>
+<p><span class="math inline">\displaystyle - 2 A K_{z2} k_{x} \mu_{2}
+e^{i K_{z2} z_{a} - i K_{z2} z_{b}} + 2 B K_{z2} k_{x} \mu_{2} + C
+L_{z2}^{2} \mu_{2} e^{i L_{z2} z_{a} - i L_{z2} z_{b}} - C k_{x}^{2}
+\mu_{2} e^{i L_{z2} z_{a} - i L_{z2} z_{b}} + D L_{z2}^{2} \mu_{2} - D
+k_{x}^{2} \mu_{2} = - 2 F K_{z3} k_{x} \mu_{3}</span></p>
+<p><span class="math inline">\displaystyle - A K_{z2}^{2} \lambda_{2}
+e^{i K_{z2} z_{a} - i K_{z2} z_{b}} - 2 A K_{z2}^{2} \mu_{2} e^{i K_{z2}
+z_{a} - i K_{z2} z_{b}} - A k_{x}^{2} \lambda_{2} e^{i K_{z2} z_{a} - i
+K_{z2} z_{b}} - B K_{z2}^{2} \lambda_{2} - 2 B K_{z2}^{2} \mu_{2} - B
+k_{x}^{2} \lambda_{2} - 2 C L_{z2} k_{x} \mu_{2} e^{i L_{z2} z_{a} - i
+L_{z2} z_{b}} + 2 D L_{z2} k_{x} \mu_{2} = F \left(- K_{z3}^{2}
+\lambda_{3} - 2 K_{z3}^{2} \mu_{3} - k_{x}^{2}
+\lambda_{3}\right)</span></p>
+<p>This system of equations can be written on matrix form <span
+class="math inline">\mathbf{Ax=b}</span></p>
+<p>Where <span class="math inline">\mathbf{A}</span> is given by</p>
+<p><span class="math inline">\displaystyle \left[\begin{matrix}- i
+K_{z1} &amp; - i K_{z2} &amp; i K_{z2} e^{i K_{z2} z_{a} - i K_{z2}
+z_{b}} &amp; - i k_{x} &amp; - i k_{x} e^{i L_{z2} z_{a} - i L_{z2}
+z_{b}} &amp; 0\\2 K_{z1} k_{x} \mu_{1} &amp; 2 K_{z2} k_{x} \mu_{2}
+&amp; - 2 K_{z2} k_{x} \mu_{2} e^{i K_{z2} z_{a} - i K_{z2} z_{b}} &amp;
+- L_{z2}^{2} \mu_{2} + k_{x}^{2} \mu_{2} &amp; - L_{z2}^{2} \mu_{2} e^{i
+L_{z2} z_{a} - i L_{z2} z_{b}} + k_{x}^{2} \mu_{2} e^{i L_{z2} z_{a} - i
+L_{z2} z_{b}} &amp; 0\\- K_{z1}^{2} \lambda_{1} - 2 K_{z1}^{2} \mu_{1} -
+k_{x}^{2} \lambda_{1} &amp; K_{z2}^{2} \lambda_{2} + 2 K_{z2}^{2}
+\mu_{2} + k_{x}^{2} \lambda_{2} &amp; \left(K_{z2}^{2} \lambda_{2} + 2
+K_{z2}^{2} \mu_{2} + k_{x}^{2} \lambda_{2}\right) e^{- i \left(2 K_{z2}
+z_{b} + 2 L_{z2} z_{b}\right)} e^{i \left(K_{z2} z_{a} + K_{z2} z_{b} +
+2 L_{z2} z_{b}\right)} &amp; 2 L_{z2} k_{x} \mu_{2} &amp; - 2 L_{z2}
+k_{x} \mu_{2} e^{- i \left(2 K_{z2} z_{b} + 2 L_{z2} z_{b}\right)} e^{i
+\left(2 K_{z2} z_{b} + L_{z2} z_{a} + L_{z2} z_{b}\right)} &amp; 0\\0
+&amp; i K_{z2} e^{i K_{z2} z_{a} - i K_{z2} z_{b}} &amp; - i K_{z2}
+&amp; i k_{x} e^{i L_{z2} z_{a} - i L_{z2} z_{b}} &amp; i k_{x} &amp; -
+i K_{z3}\\0 &amp; - 2 K_{z2} k_{x} \mu_{2} e^{i K_{z2} z_{a} - i K_{z2}
+z_{b}} &amp; 2 K_{z2} k_{x} \mu_{2} &amp; L_{z2}^{2} \mu_{2} e^{i L_{z2}
+z_{a} - i L_{z2} z_{b}} - k_{x}^{2} \mu_{2} e^{i L_{z2} z_{a} - i L_{z2}
+z_{b}} &amp; L_{z2}^{2} \mu_{2} - k_{x}^{2} \mu_{2} &amp; 2 K_{z3} k_{x}
+\mu_{3}\\0 &amp; - K_{z2}^{2} \lambda_{2} e^{i K_{z2} z_{a} - i K_{z2}
+z_{b}} - 2 K_{z2}^{2} \mu_{2} e^{i K_{z2} z_{a} - i K_{z2} z_{b}} -
+k_{x}^{2} \lambda_{2} e^{i K_{z2} z_{a} - i K_{z2} z_{b}} &amp; -
+K_{z2}^{2} \lambda_{2} - 2 K_{z2}^{2} \mu_{2} - k_{x}^{2} \lambda_{2}
+&amp; - 2 L_{z2} k_{x} \mu_{2} e^{i L_{z2} z_{a} - i L_{z2} z_{b}} &amp;
+2 L_{z2} k_{x} \mu_{2} &amp; - (- K_{z3}^{2} \lambda_{3} - 2 K_{z3}^{2}
+\mu_{3} - k_{x}^{2} \lambda_{3})\end{matrix}\right]</span></p>
+<p>and <span class="math inline">\mathbf{b}</span> is given by</p>
+<p><span class="math inline">\displaystyle \left[\begin{matrix}- i
+K_{z1} P e^{i K_{z1} \left(z_{b} - z_{s}\right)}\\2 K_{z1} P k_{x}
+\mu_{1} e^{i K_{z1} \left(z_{b} - z_{s}\right)}\\- P \left(- K_{z1}^{2}
+\lambda_{1} - 2 K_{z1}^{2} \mu_{1} - k_{x}^{2} \lambda_{1}\right) e^{2 i
+K_{z1} z_{b}} e^{- i K_{z1} \left(z_{b} +
+z_{s}\right)}\\0\\0\\0\end{matrix}\right]</span></p>
+<p>and <span class="math inline">\mathbf{x}</span> is given by</p>
+<p><span class="math inline">\displaystyle
+\left[\begin{matrix}Q\\A\\B\\C\\D\\F\end{matrix}\right]</span></p>
+<div id="4c91e4a1">
+
+</div>
+<div class="Highlighting">
+<p><span style="color: 0.40,0.40,0.40">%</span>run ..<span
+style="color: 0.40,0.40,0.40">/</span>num_analysis.py</p>
+</div>
+<p><img
+src="pandocConversionMedia/75f06721e348f3b4ce28a695e869b3e55cca86ae.png"
+alt="image" /></p>
+<p><img
+src="pandocConversionMedia/722fb2f264a90178525e5cb973b9caf1ceed07c5.png"
+alt="image" /></p>
+<p>For references see (Shaw, 2015), (Stein, 2009), (Aki, 2002).</p>
+<div id="accbdd8a">
+
+</div>
+<h2 id="references">References</h2>
+<div id="c4c63995">
+
+</div>
+<div class="Highlighting">
+
+</div>
+
+<audio controls>
+<source src="Test2.m4a" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</body>
+</html>
